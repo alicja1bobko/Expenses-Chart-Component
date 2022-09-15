@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Balance from "./components/Balance";
-import Chart from "./components/Chart";
+import Chart from "./components/Chart.jsx";
 
 function App() {
   return (
