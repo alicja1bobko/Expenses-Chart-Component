@@ -33,30 +33,60 @@
 .content {
   display: flex;
   flex-direction: column;
-  min-width: 25rem;
+  min-width: 30rem;
 }
 
 .balance-container {
   background-color: var(--soft-red);
-  color: white;
+  color: var(--very-pale-orange);
   padding: 1.6rem 0 1.2rem 2.1rem;
   margin: 1.25rem 0;
-  border-radius: 1rem;
+  border-radius: 1.25rem;
   position: relative;
   text-align: left;
 }
-.balance-container p{
+.balance-container p {
   font-size: 1.1em;
 }
 
-.balance{
+.balance {
   font-size: 1.75em;
 }
 
 .logo {
   position: absolute;
-  top:2.5em;
+  top: 2.5em;
   right: 1.5em;
+}
+.chart-container {
+  background-color: var(--very-pale-orange);
+  border-radius: 1.25rem;
+  padding: 2rem 2.6rem 2rem;
+}
+
+.chart-container h1 {
+  font-size: 1.75em;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.total {
+  font-size: 2rem;
+}
+
+#total {
+  font-size: 1.2em;
+  opacity: 0.7;
+}
+
+hr {
+  margin: 3rem 0 2rem;
+  border-top: 2px solid;
 }
 
 @media screen and (min-width: 370px) {
@@ -67,7 +97,6 @@
 @media screen and (min-width: 800px) {
   body {
     font-size: 12px;
- 
   }
 }
 @media screen and (min-width: 1100px) {
@@ -76,11 +105,7 @@
   }
 }
 @media screen and (min-width: 1400px) {
-body {
-		font-size: 16px;
-	}
+  body {
+    font-size: 16px;
+  }
 }
-
-
-
-
