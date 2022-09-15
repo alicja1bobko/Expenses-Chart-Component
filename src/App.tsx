@@ -1,11 +1,15 @@
-import React from 'react';
-
+import React from "react";
 import "./App.css";
+import Balance from "./components/Balance";
+import Chart from "./components/Chart";
 
 function App() {
   return (
     <div className="App">
-      <h1 className="text-2xl font-bold underline">Hello world!</h1>
+      <div className="content">
+        <Balance />
+        <Chart />
+      </div>
     </div>
   );
 }
