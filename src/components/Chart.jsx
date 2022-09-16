@@ -1,10 +1,4 @@
-import {
-  VictoryBar,
-  VictoryAxis,
-  VictoryChart,
-  VictoryTheme,
-  VictoryTooltip,
-} from "victory";
+import { VictoryBar, VictoryAxis, VictoryChart, VictoryTooltip } from "victory";
 import { data } from "../utilities/data";
 import { theme } from "../utilities/theme";
 
