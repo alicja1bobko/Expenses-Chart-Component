@@ -8,8 +8,14 @@ import {
 import { data } from "../utilities/data";
 import { theme } from "../utilities/theme";
 
-const COLOR_DEFAULT = "hsl(10 79% 65% / 70%)";
-const COLOR_NOTHOVER = "hsl(10 79% 65%)";
+const COLOR_ONHOVER = "hsl(10 79% 65% / 70%)";
+const COLOR_DEFAULT = "hsl(10 79% 65%)";
+const COLOR_TODAY = "hsl(186 34% 60%)";
+const COLOR_TODAY_ONHOVER = "hsl(186 34% 60% / 70%)";
+
+const today = new Date()
+  .toLocaleString("en-us", { weekday: "short" })
+  .toLowerCase();
 
 const Chart = () => {
   return (
@@ -25,10 +31,12 @@ const Chart = () => {
           }}
         >
           <VictoryAxis tickValues={data.map((d) => d.day)} />
-          {/* <VictoryAxis dependentAxis /> */}
           <VictoryBar
             style={{
-              data: { fill: "hsl(10 79% 65%)" },
+              data: {
+                fill: ({ datum }) =>
+                  datum.day === today ? COLOR_TODAY : COLOR_DEFAULT,
+              },
               labels: { fill: "white" },
             }}
             cornerRadius={{ top: 3, bottom: 3 }}
@@ -54,7 +62,8 @@ const Chart = () => {
                         target: "data",
                         mutation: () => ({
                           style: {
-                            fill: COLOR_NOTHOVER,
+                            fill: ({ datum }) =>
+                              datum.day === today ? COLOR_TODAY : COLOR_DEFAULT,
                           },
                         }),
                       },
@@ -62,7 +71,10 @@ const Chart = () => {
                         target: "data",
                         mutation: () => ({
                           style: {
-                            fill: COLOR_DEFAULT,
+                            fill: ({ datum }) =>
+                              datum.day === today
+                                ? COLOR_TODAY_ONHOVER
+                                : COLOR_ONHOVER,
                           },
                         }),
                       },
@@ -75,7 +87,8 @@ const Chart = () => {
                         target: "data",
                         mutation: () => ({
                           style: {
-                            fill: COLOR_NOTHOVER,
+                            fill: ({ datum }) =>
+                              datum.day === today ? COLOR_TODAY : COLOR_DEFAULT,
                           },
                         }),
                       },
@@ -83,7 +96,8 @@ const Chart = () => {
                         target: "data",
                         mutation: () => ({
                           style: {
-                            fill: COLOR_NOTHOVER,
+                            fill: ({ datum }) =>
+                              datum.day === today ? COLOR_TODAY : COLOR_DEFAULT,
                           },
                         }),
                       },
@@ -100,7 +114,7 @@ const Chart = () => {
       <footer>
         <div className="text-left">
           <p id="total">Total this month</p>
-          <span className="font-bold total">$478.33</span>
+          <span className="font-bold total">$227.77</span>
         </div>
         <div className="text-right ">
           <p className="font-bold mb-1">+2.4%</p>

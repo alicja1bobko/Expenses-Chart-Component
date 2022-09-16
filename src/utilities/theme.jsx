@@ -26,6 +26,9 @@ const fontWeight = "bold";
 // Layout
 const padding = 2;
 
+
+
+
 const baseProps = {
   width: 370,
   height: 230,
